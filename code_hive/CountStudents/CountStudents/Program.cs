@@ -1,6 +1,7 @@
 ﻿/// <summary>
 /// 20221019
 /// https://leetcode.cn/problems/number-of-students-unable-to-eat-lunch/
+/// Sadly, Forgot commit code.
 /// </summary>
 public class Solution
 {
