@@ -1,12 +1,52 @@
 ﻿using System.Text.RegularExpressions;
 
+
 var a = new Solution();
+a.OneEditAway("spartan", "part");
 public class Solution
 {
     public bool OneEditAway(string first, string second)
     {
-        return false;
+        var firstLength = first.Length;
+        var secondLength = second.Length;
+        if (firstLength == secondLength)
+        {
+            var diffCount = 0;
+            for (int i = 0; i < firstLength; i++)
+            {
+                if (first[i] != second[i])
+                {
+                    diffCount++;
+                }
+            }
+            return diffCount <= 1;
+        }
+        else if (firstLength - secondLength == 1 || secondLength - firstLength == 1)
+        {
+            var shortStr = firstLength < secondLength ? first : second;
+            var longStr = firstLength < secondLength ? second : first;
+            int length1 = shortStr.Length, length2 = longStr.Length;
+            int index1 = 0, index2 = 0;
+            while (index1 < length1 && index2 < length2)
+            {
+                if (shortStr[index1] == longStr[index2])
+                {
+                    index1++;
+                }
+                index2++;
+                if (index2 - index1 > 1)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
+
     public int MinMutation(string start, string end, string[] bank)
     {
         var isValid = false;
