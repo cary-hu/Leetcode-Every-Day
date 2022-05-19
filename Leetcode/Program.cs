@@ -5,6 +5,17 @@ var a = new Solution();
 a.OneEditAway("spartan", "part");
 public class Solution
 {
+    public int MinMoves2(int[] nums)
+    {
+        var res = 0;
+        var orderedNums = nums.OrderBy(x => x).ToList();
+        var middle = orderedNums[nums.Length / 2];
+        for (int i = 0; i < nums.Length; i++)
+        {
+            res += Math.Abs(nums[i] - middle);
+        }
+        return res;
+    }
     public bool OneEditAway(string first, string second)
     {
         var firstLength = first.Length;
