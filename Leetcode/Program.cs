@@ -11,7 +11,72 @@ list.Add(new int[] { 1, 2 });
 a.FindRightInterval(list.ToArray());
 public class Solution
 {
-
+    public int SearchInsert(int[] nums, int target)
+    {
+        var left = 0;
+        var right = nums.Length - 1;
+        while (left <= right)
+        {
+            var mid = left + (right - left) / 2;
+            if (nums[mid] == target)
+            {
+                return mid;
+            }
+            else if (nums[mid] < target)
+            {
+                left = mid + 1;
+            }
+            else
+            {
+                right = mid - 1;
+            }
+        }
+        return nums.Length;
+    }
+    private bool IsBadVersion(int mid)
+    {
+        return false;
+    }
+    public int FirstBadVersion(int n)
+    {
+        var left = 0;
+        var right = n;
+        while (left < right)
+        {
+            var mid = left + (right - left) / 2;
+            if (IsBadVersion(mid))
+            {
+                right = mid;
+            }
+            else
+            {
+                left = mid + 1;
+            }
+        }
+        return left;
+    }
+    public int BinarySearch(int[] nums, int target)
+    {
+        var left = 0;
+        var right = nums.Length - 1;
+        while (left <= right)
+        {
+            var mid = left + (right - left) / 2;
+            if (nums[mid] == target)
+            {
+                return mid;
+            }
+            if (nums[mid] < target)
+            {
+                left = mid + 1;
+            }
+            else
+            {
+                right = mid - 1;
+            }
+        }
+        return -1;
+    }
     public int[] FindRightInterval(int[][] intervals)
     {
         var list = new List<int>();
