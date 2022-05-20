@@ -2,9 +2,83 @@
 
 
 var a = new Solution();
-a.OneEditAway("spartan", "part");
+var list = new List<int[]>();
+list.Add(new int[] { 3, 4 });
+list.Add(new int[] { 2, 3 });
+list.Add(new int[] { 1, 2 });
+
+
+a.FindRightInterval(list.ToArray());
 public class Solution
 {
+
+    public int[] FindRightInterval(int[][] intervals)
+    {
+        var list = new List<int>();
+        var dict = new Dictionary<int, int>();
+        for (int i = 0; i < intervals.Length; i++)
+        {
+            dict.Add(intervals[i][0], i);
+        }
+        var sorted = intervals.OrderBy(x => x[0]).ToArray();
+        for (int i = 0; i < intervals.Length; i++)
+        {
+            var interval = intervals[i];
+            var index = BinarySearch(sorted, interval[1]);
+            if (index != -1)
+            {
+                list.Add(dict[sorted[index][0]]);
+            }
+            else
+            {
+
+                list.Add(index);
+            }
+        }
+        return list.ToArray();
+    }
+    private int BinarySearch(int[][] intervals, int interval)
+    {
+        int left = 0;
+        int right = intervals.Length - 1;
+        var res = -1;
+        while (left <= right)
+        {
+            int mid = left + (right - left) / 2;
+            if (intervals[mid][0] >= interval)
+            {
+                res = mid;
+            }
+            else if (intervals[mid][0] < interval)
+            {
+                left = mid + 1;
+            }
+            else
+            {
+                right = mid - 1;
+            }
+        }
+        return res;
+    }
+    public int[] PlusOne(int[] digits)
+    {
+        int t = 1;
+        for (int i = digits.Length - 1; i >= 0; i--)
+        {
+            digits[i] += t;
+            t = digits[i] / 10;
+            digits[i] %= 10;
+        }
+        var list = digits.ToList();
+        if (t == 1)
+        {
+            list.Add(0);
+            for (int i = list.Count - 2; i >= 0; i--)
+                list[i + 1] = list[i];
+            list[0] = 1;
+        }
+        return list.ToArray();
+    }
     public int MinMoves2(int[] nums)
     {
         var res = 0;
