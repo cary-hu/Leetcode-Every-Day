@@ -5,6 +5,31 @@ var a = new Solution();
 a.OneEditAway("spartan", "part");
 public class Solution
 {
+    public int RepeatedNTimes(int[] nums)
+    {
+        var count = nums.Length / 2;
+        var dict = new Dictionary<int, int>();
+        foreach (var num in nums)
+        {
+            if (dict.ContainsKey(num))
+            {
+                dict[num]++;
+            }
+            else
+            {
+                dict.Add(num, 1);
+            }
+        }
+
+        foreach (var item in dict)
+        {
+            if (item.Value == count)
+            {
+                return item.Key;
+            }
+        }
+        return -1;
+    }
     public int MinMoves2(int[] nums)
     {
         var res = 0;
