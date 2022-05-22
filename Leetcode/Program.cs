@@ -2,15 +2,137 @@
 
 
 var a = new Solution();
-var list = new List<int[]>();
-list.Add(new int[] { 3, 4 });
-list.Add(new int[] { 2, 3 });
-list.Add(new int[] { 1, 2 });
 
-
-a.FindRightInterval(list.ToArray());
+a.TwoSum(new int[] { 5, 25, 75 }, 100);
 public class Solution
 {
+    public int[] TwoSum(int[] numbers, int target)
+    {
+        int[] result = new int[2];
+        int i = 0;
+        int j = numbers.Length - 1;
+        while (i < j)
+        {
+            if (numbers[i] + numbers[j] == target)
+            {
+                result[0] = i + 1;
+                result[1] = j + 1;
+                break;
+            }
+            else if (numbers[i] + numbers[j] < target)
+            {
+                i++;
+            }
+            else
+            {
+                j--;
+            }
+        }
+        return result;
+    }
+    public void MoveZeroes(int[] nums)
+    {
+        int i = 0;
+        int j = 0;
+        while (i < nums.Length && j < nums.Length)
+        {
+            if (nums[i] == 0)
+            {
+                i++;
+            }
+            else
+            {
+                nums[j] = nums[i];
+                i++;
+                j++;
+            }
+        }
+        while (j < nums.Length)
+        {
+            nums[j] = 0;
+            j++;
+        }
+
+    }
+    Dictionary<int, bool> memo = new Dictionary<int, bool>();
+
+    public bool CanIWin(int maxChoosableInteger, int desiredTotal)
+    {
+        if ((1 + maxChoosableInteger) * (maxChoosableInteger) / 2 < desiredTotal)
+        {
+            return false;
+        }
+        return DFS(maxChoosableInteger, 0, desiredTotal, 0);
+    }
+
+    public bool DFS(int maxChoosableInteger, int usedNumbers, int desiredTotal, int currentTotal)
+    {
+        if (!memo.ContainsKey(usedNumbers))
+        {
+            bool res = false;
+            for (int i = 0; i < maxChoosableInteger; i++)
+            {
+                if (((usedNumbers >> i) & 1) == 0)
+                {
+                    if (i + 1 + currentTotal >= desiredTotal)
+                    {
+                        res = true;
+                        break;
+                    }
+                    if (!DFS(maxChoosableInteger, usedNumbers | (1 << i), desiredTotal, currentTotal + i + 1))
+                    {
+                        res = true;
+                        break;
+                    }
+                }
+            }
+            memo.Add(usedNumbers, res);
+        }
+        return memo[usedNumbers];
+    }
+
+    作者：LeetCode-Solution
+    链接：https://leetcode.cn/problems/can-i-win/solution/wo-neng-ying-ma-by-leetcode-solution-ef5v/
+来源：力扣（LeetCode）
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+    public int[] SortedSquares(int[] nums)
+    {
+        var i = 0;
+        var j = nums.Length - 1;
+        var result = new int[nums.Length];
+        var pos = nums.Length - 1;
+        while (i <= j)
+        {
+            if (nums[i] * nums[i] > nums[j] * nums[j])
+            {
+                result[pos] = nums[i] * nums[i];
+                ++i;
+            }
+            else
+            {
+                result[pos] = nums[j] * nums[j];
+                --j;
+            }
+            --pos;
+        }
+        return result;
+    }
+    public void Rotate(int[] nums, int k)
+    {
+        var n = nums.Length;
+        k = k % n;
+        var temp = new int[n];
+        for (int i = 0; i < n; i++)
+        {
+            temp[(i + k) % n] = nums[i];
+        }
+        for (int i = 0; i < n; i++)
+        {
+            nums[i] = temp[i];
+        }
+
+
+    }
     public int RepeatedNTimes(int[] nums)
     {
         var count = nums.Length / 2;
@@ -35,7 +157,7 @@ public class Solution
             }
         }
         return -1;
-    }    
+    }
     public int SearchInsert(int[] nums, int target)
     {
         var left = 0;
