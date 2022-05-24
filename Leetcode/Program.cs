@@ -6,6 +6,63 @@ var a = new Solution();
 a.TwoSum(new int[] { 5, 25, 75 }, 100);
 public class Solution
 {
+    public ListNode MiddleNode(ListNode head)
+    {
+        if (head == null)
+            return null;
+        ListNode slow = head;
+        ListNode fast = head;
+        while (fast != null && fast.next != null)
+        {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+    public ListNode RemoveNthFromEnd(ListNode head, int n)
+    {
+        var dummy = new ListNode(-1);
+        dummy.next = head;
+        var slow = dummy;
+        var fast = dummy;
+        while (n-- > 0)
+        {
+            fast = fast.next;
+        }
+        while (fast.next != null)
+        {
+            fast = fast.next;
+            slow = slow.next;
+        }
+        slow.next = slow.next.next;
+        return dummy.next;
+    }
+    public bool IsUnivalTree(TreeNode root)
+    {
+        if (root == null)
+        {
+            return true;
+        }
+        var q = new Queue<TreeNode>();
+        q.Enqueue(root);
+        while (q.Count > 0)
+        {
+            var node = q.Dequeue();
+            if (node.left != null)
+            {
+                if (node.left.val != node.val)
+                    return false;
+                q.Enqueue(node.left);
+            }
+            if (node.right != null)
+            {
+                if (node.right.val != node.val)
+                    return false;
+                q.Enqueue(node.right);
+            }
+        }
+        return true;
+    }
     public void ReverseString(char[] s)
     {
         var i = 0;
@@ -199,11 +256,6 @@ public class Solution
         }
         return memo[usedNumbers];
     }
-
-    作者：LeetCode-Solution
-    链接：https://leetcode.cn/problems/can-i-win/solution/wo-neng-ying-ma-by-leetcode-solution-ef5v/
-来源：力扣（LeetCode）
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
     public int[] SortedSquares(int[] nums)
     {
         var i = 0;
@@ -1719,5 +1771,15 @@ public class QuadTreeNode
         topRight = _topRight;
         bottomLeft = _bottomLeft;
         bottomRight = _bottomRight;
+    }
+}
+public class ListNode
+{
+    public int val;
+    public ListNode next;
+    public ListNode(int val = 0, ListNode next = null)
+    {
+        this.val = val;
+        this.next = next;
     }
 }
