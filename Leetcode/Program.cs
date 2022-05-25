@@ -6,6 +6,79 @@ var a = new Solution();
 a.TwoSum(new int[] { 5, 25, 75 }, 100);
 public class Solution
 {
+    public int FindSubstringInWraproundString(string p)
+    {
+        var dic = new Dictionary<char, int>();
+        var max = 0;
+        for (var i = 0; i < p.Length; i++)
+        {
+            if (i > 0 && (p[i] - p[i - 1] == 1 || p[i] - p[i - 1] == -25))
+            {
+                max++;
+            }
+            else
+            {
+                max = 1;
+            }
+            if (dic.ContainsKey(p[i]))
+            {
+                dic[p[i]] = Math.Max(dic[p[i]], max);
+            }
+            else
+            {
+                dic.Add(p[i], max);
+            }
+        }
+        return dic.Values.Sum();
+
+    }
+    public bool CheckInclusion(string s1, string s2)
+    {
+        if (s1.Length > s2.Length)
+            return false;
+
+        var s1Hash = new int[26];
+        var s2Hash = new int[26];
+
+        for (int i = 0; i < s1.Length; i++)
+        {
+            s1Hash[s1[i] - 'a']++;
+            s2Hash[s2[i] - 'a']++;
+        }
+
+        for (int i = s1.Length; i < s2.Length; i++)
+        {
+            if (s1Hash.SequenceEqual(s2Hash))
+                return true;
+
+            s2Hash[s2[i] - 'a']++;
+            s2Hash[s2[i - s1.Length] - 'a']--;
+        }
+
+        return s1Hash.SequenceEqual(s2Hash);
+    }
+    public int LengthOfLongestSubstring(string s)
+    {
+        var start = 0;
+        var end = 0;
+        var max = 0;
+        var set = new HashSet<char>();
+        while (end < s.Length)
+        {
+            if (!set.Contains(s[end]))
+            {
+                set.Add(s[end]);
+                end++;
+                max = Math.Max(max, end - start);
+            }
+            else
+            {
+                set.Remove(s[start]);
+                start++;
+            }
+        }
+        return max;
+    }
     public ListNode MiddleNode(ListNode head)
     {
         if (head == null)
