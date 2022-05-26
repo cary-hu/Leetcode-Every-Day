@@ -3,9 +3,108 @@
 
 var a = new Solution();
 
-a.TwoSum(new int[] { 5, 25, 75 }, 100);
+a.FloodFill(new int[][] { new int[] { 0, 0, 0 }, new int[] { 0, 1, 1 } }, 1, 1, 1);
 public class Solution
 {
+    public int MaxAreaOfIsland(int[][] grid)
+    {
+        var res = 0;
+        for (int i = 0; i < grid.Length; i++)
+        {
+            for (int j = 0; j < grid[0].Length; j++)
+            {
+                if (grid[i][j] == 1)
+                {
+                    var tempRes = GetArea(grid, i, j);
+                    res = Math.Max(res, tempRes);
+                }
+            }
+        }
+
+        return res;
+    }
+
+    private int GetArea(int[][] grid, int i, int j)
+    {
+        if (i == grid.Length || i < 0)
+            return 0;
+        else if (j == grid[0].Length || j < 0)
+            return 0; ;
+        if (grid[i][j] == 1)
+        {
+            grid[i][j] = 0;
+            return 1 + GetArea(grid, i + 1, j) + GetArea(grid, i - 1, j) + GetArea(grid, i, j + 1) + GetArea(grid, i, j - 1);
+        }
+        return 0;
+    }
+    public int[][] FloodFill(int[][] image, int sr, int sc, int newColor)
+    {
+        var queue = new Queue<(int x, int y)>();
+        queue.Enqueue((sr, sc));
+        var originColor = image[sr][sc];
+        int xLength = image.Length;
+        int yLength = image[0].Length;
+        while (queue.Count > 0)
+        {
+            var current = queue.Dequeue();
+            image[current.x][current.y] = -1;
+            if (0 <= current.x - 1 && image[current.x - 1][current.y] == originColor)
+            {
+                queue.Enqueue((current.x - 1, current.y));
+
+            }
+            if (xLength > current.x + 1 && image[current.x + 1][current.y] == originColor)
+            {
+                queue.Enqueue((current.x + 1, current.y));
+
+            }
+            if (0 <= current.y - 1 && image[current.x][current.y - 1] == originColor)
+            {
+                queue.Enqueue((current.x, current.y - 1));
+
+            }
+            if (yLength > current.y + 1 && image[current.x][current.y + 1] == originColor)
+            {
+                queue.Enqueue((current.x, current.y + 1));
+            }
+        }
+        for (int i = 0; i < xLength; i++)
+        {
+            for (int j = 0; j < yLength; j++)
+            {
+                if (image[i][j] == -1)
+                {
+                    image[i][j] = newColor;
+                }
+            }
+        }
+        return image;
+    }
+    public IList<int> FallingSquares(int[][] positions)
+    {
+        int n = positions.Length;
+        IList<int> heights = new List<int>();
+        for (int i = 0; i < n; i++)
+        {
+            int left1 = positions[i][0];
+            int right1 = positions[i][0] + positions[i][1] - 1;
+            heights.Add(positions[i][1]);
+            for (int j = 0; j < i; j++)
+            {
+                int left2 = positions[j][0];
+                int right2 = positions[j][0] + positions[j][1] - 1;
+                if (right1 >= left2 && right2 >= left1)
+                {
+                    heights[i] = Math.Max(heights[i], heights[j] + positions[i][1]);
+                }
+            }
+        }
+        for (int i = 1; i < n; i++)
+        {
+            heights[i] = Math.Max(heights[i], heights[i - 1]);
+        }
+        return heights;
+    }
     public int FindSubstringInWraproundString(string p)
     {
         var dic = new Dictionary<char, int>();
