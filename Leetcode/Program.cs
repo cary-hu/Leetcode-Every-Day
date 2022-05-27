@@ -3,9 +3,109 @@
 
 var a = new Solution();
 
-a.FloodFill(new int[][] { new int[] { 0, 0, 0 }, new int[] { 0, 1, 1 } }, 1, 1, 1);
+a.CountValidWords("he bought 2 pencils, 3 erasers, and 1  pencil-sharpener.");
 public class Solution
 {
+    public int CountValidWords(string sentence)
+    {
+        var words = sentence.Split(' ');
+        var count = 0;
+        foreach (var word in words)
+        {
+            if (string.IsNullOrEmpty(word))
+            {
+                continue;
+            }
+            if (IsValidWord(word))
+            {
+                count++;
+            }
+        }
+        return count;
+    }
+    private bool IsValidWord(string word)
+    {
+        int n = word.Length;
+        bool hasHyphens = false;
+        for (int i = 0; i < n; i++)
+        {
+            if (char.IsDigit(word[i]))
+            {
+                return false;
+            }
+            else if (word[i] == '-')
+            {
+                if (hasHyphens == true || i == 0 || i == n - 1 || !char.IsLetter(word[i - 1]) || !char.IsLetter(word[i + 1]))
+                {
+                    return false;
+                }
+                hasHyphens = true;
+            }
+            else if (word[i] == '!' || word[i] == '.' || word[i] == ',')
+            {
+                if (i != n - 1)
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    public int FindClosest(string[] words, string word1, string word2)
+    {
+        var n = words.Length;
+        var min = int.MaxValue;
+        for (int i = 0; i < n; i++)
+        {
+            if (words[i] != word1)
+            {
+                continue;
+            }
+            for (int j = 0; j < n; j++)
+            {
+                if (words[j] != word2)
+                {
+                    continue;
+                }
+                min = Math.Min(min, Math.Abs(j - i));
+            }
+        }
+        return min;
+    }
+    public Node Connect(Node root)
+    {
+        if (root == null)
+            return null;
+        if (root.left != null)
+            root.left.next = root.right;
+        if (root.right != null)
+            root.right.next = root.next?.left;
+        Connect(root.left);
+        Connect(root.right);
+        return root;
+    }
+    public TreeNode MergeTrees(TreeNode root1, TreeNode root2)
+    {
+        var root = new TreeNode(0);
+        if (root1 == null && root2 == null)
+        {
+            return null;
+        }
+        if (root1 == null)
+        {
+            return root2;
+        }
+        if (root2 == null)
+        {
+            return root1;
+        }
+        root.val = root1.val + root2.val;
+        root.left = MergeTrees(root1.left, root2.left);
+        root.right = MergeTrees(root1.right, root2.right);
+
+
+        return root;
+    }
     public int MaxAreaOfIsland(int[][] grid)
     {
         var res = 0;
@@ -1826,6 +1926,9 @@ public class Bank
 public class Node
 {
     public int val;
+    public Node left;
+    public Node right;
+    public Node next;
     public IList<Node> children;
 
     public Node() { }
