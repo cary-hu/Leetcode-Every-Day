@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Text;
+using System.Text.RegularExpressions;
 
 
 var a = new Solution();
@@ -6,6 +7,135 @@ var a = new Solution();
 a.CountValidWords("he bought 2 pencils, 3 erasers, and 1  pencil-sharpener.");
 public class Solution
 {
+    public int[][] UpdateMatrix(int[][] mat)
+    {
+        var xLength = mat.Length;
+        var yLength = mat[0].Length;
+        var queue = new Queue<(int x, int y)>();
+        for (int i = 0; i < xLength; i++)
+        {
+            for (int j = 0; j < yLength; j++)
+            {
+                if (mat[i][j] == 0)
+                {
+                    queue.Enqueue((i, j));
+                }
+                else
+                {
+                    mat[i][j] = -1;
+                }
+            }
+        }
+        var dir = new int[4][] { new int[2] { 0, 1 }, new int[2] { 0, -1 }, new int[2] { 1, 0 }, new int[2] { -1, 0 } };
+        while (queue.Count > 0)
+        {
+            var size = queue.Count;
+            for (int i = 0; i < size; i++)
+            {
+                var (x, y) = queue.Dequeue();
+                for (int j = 0; j < 4; j++)
+                {
+                    var newX = x + dir[j][0];
+                    var newY = y + dir[j][1];
+                    if (newX >= 0 && newX < xLength && newY >= 0 && newY < yLength && mat[newX][newY] == -1)
+                    {
+                        mat[newX][newY] = mat[x][y] + 1;
+                        queue.Enqueue((newX, newY));
+                    }
+                }
+            }
+        }
+        return mat;
+
+    }
+    public int OrangesRotting(int[][] grid)
+    {
+        int m = grid.Length;
+        int n = grid[0].Length;
+        int fresh = 0;
+        Queue<int[]> q = new Queue<int[]>();
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                if (grid[i][j] == 1)
+                {
+                    fresh++;
+                }
+                else if (grid[i][j] == 2)
+                {
+                    q.Enqueue(new int[] { i, j });
+                }
+            }
+        }
+        int time = -1;
+        while (q.Count > 0)
+        {
+            int size = q.Count;
+            for (int i = 0; i < size; i++)
+            {
+                int[] cur = q.Dequeue();
+                int x = cur[0];
+                int y = cur[1];
+                if (x > 0 && grid[x - 1][y] == 1)
+                {
+                    grid[x - 1][y] = 2;
+                    fresh--;
+                    q.Enqueue(new int[] { x - 1, y });
+                }
+                if (x < m - 1 && grid[x + 1][y] == 1)
+                {
+                    grid[x + 1][y] = 2;
+                    fresh--;
+                    q.Enqueue(new int[] { x + 1, y });
+                }
+                if (y > 0 && grid[x][y - 1] == 1)
+                {
+                    grid[x][y - 1] = 2;
+                    fresh--;
+                    q.Enqueue(new int[] { x, y - 1 });
+                }
+                if (y < n - 1 && grid[x][y + 1] == 1)
+                {
+                    grid[x][y + 1] = 2;
+                    fresh--;
+                    q.Enqueue(new int[] { x, y + 1 });
+                }
+            }
+            time++;
+        }
+        return fresh == 0 ? time == -1 ? time : -1 : -1;
+
+    }
+    public string RemoveOuterParentheses(string s)
+    {
+        var stack = new Stack<char>();
+        var result = new StringBuilder();
+        foreach (var c in s)
+        {
+            if (c == '(')
+            {
+                if (stack.Count > 0)
+                {
+                    result.Append(c);
+                }
+                stack.Push(c);
+            }
+            else
+            {
+                if (stack.Count > 0)
+                {
+                    stack.Pop();
+                    if (stack.Count > 0)
+                    {
+                        result.Append(c);
+                    }
+                }
+            }
+        }
+        return result.ToString();
+
+    }
     public int CountValidWords(string sentence)
     {
         var words = sentence.Split(' ');
