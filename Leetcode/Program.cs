@@ -7,6 +7,111 @@ var a = new Solution();
 a.CountValidWords("he bought 2 pencils, 3 erasers, and 1  pencil-sharpener.");
 public class Solution
 {
+    public ListNode MergeTwoLists(ListNode list1, ListNode list2)
+    {
+        var newHead = new ListNode(-1);
+        var current = newHead;
+        while (list1 != null && list2 != null)
+        {
+            if (list1.val < list2.val)
+            {
+                current.next = list1;
+                list1 = list1.next;
+            }
+            else
+            {
+                current.next = list2;
+                list2 = list2.next;
+            }
+            current = current.next;
+        }
+        while (list1 != null)
+        {
+            current.next = list1;
+            list1 = list1.next;
+            current = current.next;
+        }
+        while (list2 != null)
+        {
+            current.next = list2;
+            list2 = list2.next;
+            current = current.next;
+        }
+        return newHead.next;
+    }
+    public ListNode ReverseList(ListNode head)
+    {
+        var newHead = new ListNode(-1);
+        var current = head;
+        while (current != null)
+        {
+            var next = current.next;
+            current.next = newHead.next;
+            newHead.next = current;
+            current = next;
+        }
+        return newHead.next;
+
+    }
+    public string ValidIPAddress(string queryIP)
+    {
+        if (queryIP.Contains(".") && isValidIPV4IPAddress(queryIP))
+            return "IPv4";
+        else if (queryIP.Contains(":") && isValidIPV6IPAddress(queryIP))
+            return "IPv6";
+        return "Neither";
+
+    }
+    private bool isValidIPV4IPAddress(string queryIP)
+    {
+        var ips = queryIP.Split('.');
+        if (ips.Length != 4)
+        {
+            return false;
+        }
+        foreach (var ip in ips)
+        {
+            if (ip.Length == 0 || ip.Length > 3)
+            {
+                return false;
+            }
+            if (ip.Length > 1 && ip[0] == '0')
+            {
+                return false;
+            }
+            if (!Regex.IsMatch(ip, @"^\d+$"))
+            {
+                return false;
+            }
+            if (int.Parse(ip) > 255)
+            {
+                return false;
+            }
+            
+        }
+        
+        return true;
+    }
+    private bool isValidIPV6IPAddress(string queryIP)
+    {
+        var ips = queryIP.Split(':');
+        if (ips.Length != 8)
+        {
+            return false;
+        }
+        foreach (var ip in ips)
+        {
+            if (ip.Length == 0 || ip.Length > 4)
+            {
+                return false;
+            }
+            if (!Regex.IsMatch(ip, @"^[0-9a-fA-F]+$"))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
     public int[][] UpdateMatrix(int[][] mat)
     {
         var xLength = mat.Length;
