@@ -4,9 +4,97 @@ using System.Text.RegularExpressions;
 
 var a = new Solution();
 
-a.CountValidWords("he bought 2 pencils, 3 erasers, and 1  pencil-sharpener.");
+a.LetterCasePermutation("a1b2");
 public class Solution
 {
+    public IList<string> LetterCasePermutation(string s)
+    {
+        IList<string> res = new List<string>();
+        LetterCasePermutationDFS(0, s, "", res);
+        return res;
+    }
+    private void LetterCasePermutationDFS(int level, string s, string currentString, IList<string> res)
+    {
+        if (level == s.Length)
+        {
+            res.Add(currentString);
+            return;
+        }
+        if (!char.IsLetter(s[level]))
+        {
+            LetterCasePermutationDFS(level + 1, s, currentString, res);
+            return;
+        }
+        LetterCasePermutationDFS(level + 1, s, currentString + s[level].ToString().ToLower(), res);
+        LetterCasePermutationDFS(level + 1, s, currentString + s[level].ToString().ToUpper(), res);
+    }
+    public IList<IList<int>> Permute(int[] nums)
+    {
+        IList<IList<int>> result = new List<IList<int>>();
+        var path = new List<int>();
+        PermuteDFS(nums, 0, path, result);
+        return result;
+    }
+    private void PermuteDFS(int[] nums, int level, List<int> path, IList<IList<int>> result)
+    {
+        if (level == nums.Length)
+        {
+            result.Add(new List<int>(path));
+            return;
+        }
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (path.Contains(nums[i]))
+            {
+                continue;
+            }
+            path.Add(nums[i]);
+            PermuteDFS(nums, level + 1, path, result);
+            path.RemoveAt(path.Count - 1);
+        }
+    }
+    public IList<IList<int>> Combine(int n, int k)
+    {
+        IList<IList<int>> result = new List<IList<int>>();
+        if (n == 0 || k == 0)
+        {
+            return result;
+        }
+        var path = new List<int>();
+        CombineDFS(0, 1, n, k, path, result);
+        return result;
+    }
+    private void CombineDFS(int level, int start, int n, int k, List<int> path, IList<IList<int>> result)
+    {
+        if (level == k)
+        {
+            result.Add(new List<int>(path));
+            return;
+        }
+        for (int i = start; i <= n; i++)
+        {
+            path.Add(i);
+            CombineDFS(level + 1, i + 1, n, k, path, result);
+            path.RemoveAt(path.Count - 1);
+        }
+    }
+    public int SumRootToLeaf(TreeNode root)
+    {
+        return SumRootToLeafDFS(root, 0);
+    }
+    private int SumRootToLeafDFS(TreeNode root, int sum)
+    {
+        if (root == null)
+        {
+            return 0;
+        }
+        sum = (sum << 1) + root.val;
+        if (root.left == null && root.right == null)
+        {
+            return sum;
+        }
+        return SumRootToLeafDFS(root.left, sum) + SumRootToLeafDFS(root.right, sum);
+    }
     public ListNode MergeTwoLists(ListNode list1, ListNode list2)
     {
         var newHead = new ListNode(-1);
@@ -87,9 +175,9 @@ public class Solution
             {
                 return false;
             }
-            
+
         }
-        
+
         return true;
     }
     private bool isValidIPV6IPAddress(string queryIP)
