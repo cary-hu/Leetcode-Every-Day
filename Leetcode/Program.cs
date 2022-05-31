@@ -4,9 +4,150 @@ using System.Text.RegularExpressions;
 
 var a = new Solution();
 
-a.LetterCasePermutation("a1b2");
+a.MinimumTotal(new int[][] {
+  new int[] {2},
+  new int[] {3,4},
+  new int[] {6,5,7},
+  new int[] {4,1,8,3},
+});
 public class Solution
 {
+    public string AlienOrder(string[] words)
+    {
+        var edges = new Dictionary<char, IList<char>>();
+        var states = new Dictionary<char, int>();
+        var length = words.Length;
+        var valid = true;
+        char[] order;
+        var index = 0;
+        foreach (var word in words)
+        {
+            foreach (var c in word)
+            {
+                if (!edges.ContainsKey(c))
+                {
+                    edges.Add(c, new List<char>());
+                }
+            }
+        }
+        for (int i = 0; i < length && valid; i++)
+        {
+            valid = AddEdge(words[i - 1], words[i], edges);
+        }
+        order = new char[edges.Count];
+        index = edges.Count - 1;
+        Dictionary<char, IList<char>>.KeyCollection letterSet = edges.Keys;
+        foreach (char u in letterSet)
+        {
+            if (!states.ContainsKey(u))
+            {
+                AlienOrderDFS(u, states, edges, order, index);
+            }
+        }
+        if (!valid)
+        {
+            return "";
+        }
+        return new string(order);
+    }
+    private bool AlienOrderDFS(char u, Dictionary<char, int> states, Dictionary<char, IList<char>> edges, char[] order, int index)
+    {
+        states.Add(u, 1);
+        IList<char> adjacent = edges[u];
+        foreach (char v in adjacent)
+        {
+            if (!states.ContainsKey(v))
+            {
+                var valid = AlienOrderDFS(v, states, edges, order, index--);
+                if (!valid)
+                {
+                    return false;
+                }
+            }
+            else if (states[v] == 1)
+            {
+                return false;
+            }
+        }
+        states[u] = 2;
+        order[index] = u;
+        return true;
+    }
+    public bool AddEdge(string before, string after, Dictionary<char, IList<char>> edges)
+    {
+        int length1 = before.Length, length2 = after.Length;
+        int length = Math.Min(length1, length2);
+        int index = 0;
+        while (index < length)
+        {
+            char c1 = before[index], c2 = after[index];
+            if (c1 != c2)
+            {
+                edges[c1].Add(c2);
+                break;
+            }
+            index++;
+        }
+        if (index == length && length1 > length2)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+    public int MinimumTotal(IList<IList<int>> triangle)
+    {
+        var dp = new int[triangle.Count][];
+        for (int i = 0; i < triangle.Count; i++)
+        {
+            dp[i] = new int[triangle[i].Count];
+        }
+
+        for (int i = 0; i < triangle.Count; i++)
+        {
+            for (int j = 0; j < triangle[i].Count; j++)
+            {
+                if (i == 0)
+                {
+                    dp[i][j] = triangle[i][j];
+                }
+                else if (j == 0)
+                {
+                    dp[i][j] = dp[i - 1][j] + triangle[i][j];
+                }
+                else if (j == triangle[i].Count - 1)
+                {
+                    dp[i][j] = dp[i - 1][j - 1] + triangle[i][j];
+                }
+                else
+                {
+                    dp[i][j] = Math.Min(dp[i - 1][j - 1], dp[i - 1][j]) + triangle[i][j];
+                }
+            }
+        }
+
+        return dp[triangle.Count - 1].Min();
+
+    }
+    public int Rob(int[] nums)
+    {
+        var res = new int[nums.Length + 1];
+        res[0] = 0;
+        res[1] = nums[0];
+        for (int i = 2; i < res.Length; i++)
+        {
+            res[i] = Math.Max(res[i - 1], res[i - 2] + nums[i - 1]);
+        }
+        return res[res.Length - 1];
+    }
+    public int ClimbStairs(int n)
+    {
+        double sqrt5 = Math.Sqrt(5);
+        double fibn = Math.Pow((1 + sqrt5) / 2, n + 1) - Math.Pow((1 - sqrt5) / 2, n + 1);
+        return (int)Math.Round(fibn / sqrt5);
+    }
     public IList<string> LetterCasePermutation(string s)
     {
         IList<string> res = new List<string>();
