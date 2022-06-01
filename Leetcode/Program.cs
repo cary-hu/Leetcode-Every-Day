@@ -12,6 +12,35 @@ a.MinimumTotal(new int[][] {
 });
 public class Solution
 {
+    public bool Makesquare(int[] matchsticks)
+    {
+        var sum = matchsticks.Sum();
+        if (sum % 4 != 0)
+        {
+            return false;
+        }
+        int len = sum / 4, n = matchsticks.Length;
+        int[] dp = new int[1 << n];
+        Array.Fill(dp, -1);
+        dp[0] = 0;
+        for (int s = 1; s < (1 << n); s++)
+        {
+            for (int k = 0; k < n; k++)
+            {
+                if ((s & (1 << k)) == 0)
+                {
+                    continue;
+                }
+                int s1 = s & ~(1 << k);
+                if (dp[s1] >= 0 && dp[s1] + matchsticks[k] <= len)
+                {
+                    dp[s] = (dp[s1] + matchsticks[k]) % len;
+                    break;
+                }
+            }
+        }
+        return dp[(1 << n) - 1] == 0;
+    }
     public string AlienOrder(string[] words)
     {
         var edges = new Dictionary<char, IList<char>>();
@@ -2023,15 +2052,6 @@ public class Solution
             }
         }
         return ret;
-        int ans = 0;
-        for (int i = 0; i < 32; i++)
-        {
-            if ((n & (1 << i)) != 0)
-            {
-                ans++;
-            }
-        }
-        return ans;
     }
     public IList<IList<int>> KSmallestPairs(int[] nums1, int[] nums2, int k)
     {
