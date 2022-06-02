@@ -12,6 +12,67 @@ a.MinimumTotal(new int[][] {
 });
 public class Solution
 {
+    public TreeNode DeleteNode(TreeNode root, int key)
+    {
+        if (root == null)
+        {
+            return null;
+        }
+        if (root.val > key)
+        {
+            root.left = DeleteNode(root.left, key);
+            return root;
+        }
+        else if (root.val < key)
+        {
+            root.right = DeleteNode(root.right, key);
+            return root;
+        }
+        else
+        {
+            if (root.left == null && root.right == null)
+            {
+                return null;
+            }
+            if (root.right == null)
+            {
+                return root.left;
+            }
+            if (root.left == null)
+            {
+                return root.right;
+            }
+            TreeNode successor = root.right;
+            while (successor.left != null)
+            {
+                successor = successor.left;
+            }
+            root.right = DeleteNode(root.right, successor.val);
+            successor.right = root.right;
+            successor.left = root.left;
+            return successor;
+        }
+    }
+    public uint reverseBits(uint n)
+    {
+        uint result = 0;
+        for (int i = 0; i < 32; i++)
+        {
+            result = (result << 1) | (n & 1);
+            n >>= 1;
+        }
+        return result;
+
+    }    
+    public int SingleNumber(int[] nums)
+    {
+        int result = 0;
+        foreach (int num in nums)
+        {
+            result ^= num;
+        }
+        return result;
+    }
     public bool Makesquare(int[] matchsticks)
     {
         var sum = matchsticks.Sum();
