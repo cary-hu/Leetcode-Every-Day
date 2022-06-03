@@ -4,14 +4,34 @@ using System.Text.RegularExpressions;
 
 var a = new Solution();
 
-a.MinimumTotal(new int[][] {
-  new int[] {2},
-  new int[] {3,4},
-  new int[] {6,5,7},
-  new int[] {4,1,8,3},
-});
+a.ConsecutiveNumbersSum(15);
 public class Solution
 {
+    public int ConsecutiveNumbersSum(int n)
+    {
+        int ans = 0;
+        int bound = 2 * n;
+        for (int k = 1; k * (k + 1) <= bound; k++)
+        {
+            if (IsKConsecutive(n, k))
+            {
+                ans++;
+            }
+        }
+        return ans;
+    }
+
+    public bool IsKConsecutive(int n, int k)
+    {
+        if (k % 2 == 1)
+        {
+            return n % k == 0;
+        }
+        else
+        {
+            return n % k != 0 && 2 * n % k == 0;
+        }
+    }
     public TreeNode DeleteNode(TreeNode root, int key)
     {
         if (root == null)
@@ -63,7 +83,7 @@ public class Solution
         }
         return result;
 
-    }    
+    }
     public int SingleNumber(int[] nums)
     {
         int result = 0;
