@@ -4,9 +4,30 @@ using System.Text.RegularExpressions;
 
 var a = new Solution();
 
-a.ConsecutiveNumbersSum(15);
+a.NumUniqueEmails(new string[] {"test.email+alex@leetcode.com", "test.e.mail+bob.cathy@leetcode.com", "testemail+david@lee.tcode.com"});
 public class Solution
 {
+    public int NumUniqueEmails(string[] emails)
+    {
+        var set = new HashSet<string>();
+        for (int i = 0; i < emails.Length; i++)
+        {
+            var email = emails[i];
+            var index = email.IndexOf('@');
+            var local = email.Substring(0, index);
+            var domain = email.Substring(index);
+            var local1 = local.Replace(".", "");
+            var plusIndex = local1.IndexOf('+');
+            if (plusIndex != -1)
+            {
+                local1 = local1.Substring(0, plusIndex);
+            }
+            var local2 = local1.Replace("+", "");
+            var res1 = local2 + domain;
+            set.Add(res1);
+        }
+        return set.Count;
+    }
     public int ConsecutiveNumbersSum(int n)
     {
         int ans = 0;
