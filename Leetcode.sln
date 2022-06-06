@@ -5,7 +5,9 @@ VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Leetcode", "Leetcode\Leetcode.csproj", "{6ABF70BA-A832-4830-BC0D-A2677DFD1F46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomPointInCircle", "RandomPointInCircle\RandomPointInCircle.csproj", "{C292BCCD-1DD2-44C2-9507-BD1D5D678825}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RandomPointInCircle", "RandomPointInCircle\RandomPointInCircle.csproj", "{C292BCCD-1DD2-44C2-9507-BD1D5D678825}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCalendarThree", "MyCalendarThree\MyCalendarThree.csproj", "{69B4B6D3-D74A-4AFD-966F-67F8AA4D3647}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C292BCCD-1DD2-44C2-9507-BD1D5D678825}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C292BCCD-1DD2-44C2-9507-BD1D5D678825}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C292BCCD-1DD2-44C2-9507-BD1D5D678825}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69B4B6D3-D74A-4AFD-966F-67F8AA4D3647}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69B4B6D3-D74A-4AFD-966F-67F8AA4D3647}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69B4B6D3-D74A-4AFD-966F-67F8AA4D3647}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69B4B6D3-D74A-4AFD-966F-67F8AA4D3647}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
