@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyCalendarThree", "MyCalend
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinEatingSpeed", "MinEatingSpeed\MinEatingSpeed.csproj", "{F91F709A-91F2-4520-ABDE-B2E6C8FEE6BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsBoomerang", "IsBoomerang\IsBoomerang.csproj", "{8BF3C256-0E2B-4CDF-9B90-FFC90D3ED68F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IsBoomerang", "IsBoomerang\IsBoomerang.csproj", "{8BF3C256-0E2B-4CDF-9B90-FFC90D3ED68F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomPointInNonOverlappingRectangles", "RandomPointInNonOverlappingRectangles\RandomPointInNonOverlappingRectangles.csproj", "{7F7FDEAD-D749-4C00-96AA-D3EE0972FA48}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{8BF3C256-0E2B-4CDF-9B90-FFC90D3ED68F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BF3C256-0E2B-4CDF-9B90-FFC90D3ED68F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BF3C256-0E2B-4CDF-9B90-FFC90D3ED68F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F7FDEAD-D749-4C00-96AA-D3EE0972FA48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F7FDEAD-D749-4C00-96AA-D3EE0972FA48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F7FDEAD-D749-4C00-96AA-D3EE0972FA48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F7FDEAD-D749-4C00-96AA-D3EE0972FA48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
