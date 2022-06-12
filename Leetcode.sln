@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IsBoomerang", "IsBoomerang\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RandomPointInNonOverlappingRectangles", "RandomPointInNonOverlappingRectangles\RandomPointInNonOverlappingRectangles.csproj", "{7F7FDEAD-D749-4C00-96AA-D3EE0972FA48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinFlipsMonoIncr", "MinFlipsMonoIncr\MinFlipsMonoIncr.csproj", "{02BF7F5A-7D82-4B85-A5CB-F851F3CFD8DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinFlipsMonoIncr", "MinFlipsMonoIncr\MinFlipsMonoIncr.csproj", "{02BF7F5A-7D82-4B85-A5CB-F851F3CFD8DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +47,10 @@ Global
 		{7F7FDEAD-D749-4C00-96AA-D3EE0972FA48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F7FDEAD-D749-4C00-96AA-D3EE0972FA48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F7FDEAD-D749-4C00-96AA-D3EE0972FA48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02BF7F5A-7D82-4B85-A5CB-F851F3CFD8DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02BF7F5A-7D82-4B85-A5CB-F851F3CFD8DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02BF7F5A-7D82-4B85-A5CB-F851F3CFD8DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02BF7F5A-7D82-4B85-A5CB-F851F3CFD8DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
