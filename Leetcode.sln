@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinFlipsMonoIncr", "MinFlip
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindAndReplacePattern", "FindAndReplacePattern\FindAndReplacePattern.csproj", "{73D74C2D-AB68-42D7-945B-AC6D4E95CF41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeightChecker", "HeightChecker\HeightChecker.csproj", "{CAD1A3BA-4778-48E8-8F8B-1B6910EC144C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeightChecker", "HeightChecker\HeightChecker.csproj", "{CAD1A3BA-4778-48E8-8F8B-1B6910EC144C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindDiagonalOrder", "FindDiagonalOrder\FindDiagonalOrder.csproj", "{A97B5C61-B45F-499E-8041-5FFD14BF8FF4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{CAD1A3BA-4778-48E8-8F8B-1B6910EC144C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAD1A3BA-4778-48E8-8F8B-1B6910EC144C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAD1A3BA-4778-48E8-8F8B-1B6910EC144C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A97B5C61-B45F-499E-8041-5FFD14BF8FF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A97B5C61-B45F-499E-8041-5FFD14BF8FF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A97B5C61-B45F-499E-8041-5FFD14BF8FF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A97B5C61-B45F-499E-8041-5FFD14BF8FF4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
