@@ -29,7 +29,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindPairs", "FindPairs\Find
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DuplicateZeros", "DuplicateZeros\DuplicateZeros.csproj", "{96C7AC20-4994-4366-A0D4-10A3B422A303}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsertIntoASortedCircularLinkedList", "InsertIntoASortedCircularLinkedList\InsertIntoASortedCircularLinkedList.csproj", "{1AD5EF86-DCCA-4DC4-87E1-BEA62481C3D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InsertIntoASortedCircularLinkedList", "InsertIntoASortedCircularLinkedList\InsertIntoASortedCircularLinkedList.csproj", "{1AD5EF86-DCCA-4DC4-87E1-BEA62481C3D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindFrequentTreeSum", "FindFrequentTreeSum\FindFrequentTreeSum.csproj", "{66EB13EE-E78A-47D0-A9BA-315B09D707F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +95,10 @@ Global
 		{1AD5EF86-DCCA-4DC4-87E1-BEA62481C3D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AD5EF86-DCCA-4DC4-87E1-BEA62481C3D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AD5EF86-DCCA-4DC4-87E1-BEA62481C3D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66EB13EE-E78A-47D0-A9BA-315B09D707F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66EB13EE-E78A-47D0-A9BA-315B09D707F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66EB13EE-E78A-47D0-A9BA-315B09D707F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66EB13EE-E78A-47D0-A9BA-315B09D707F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
