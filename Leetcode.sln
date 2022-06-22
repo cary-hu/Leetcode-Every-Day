@@ -33,7 +33,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InsertIntoASortedCircularLi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindFrequentTreeSum", "FindFrequentTreeSum\FindFrequentTreeSum.csproj", "{66EB13EE-E78A-47D0-A9BA-315B09D707F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RangeModule", "RangeModule\RangeModule.csproj", "{AADABEE4-379E-447B-B140-1031F4795120}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RangeModule", "RangeModule\RangeModule.csproj", "{AADABEE4-379E-447B-B140-1031F4795120}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DefangIPaddr", "DefangIPaddr\DefangIPaddr.csproj", "{35CC0458-CA49-4AD5-A7BD-0B61A1B66FA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindBottomLeftValue", "FindBottomLeftValue\FindBottomLeftValue.csproj", "{27887CBE-97A5-453B-8FE1-41406AA3924A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +109,14 @@ Global
 		{AADABEE4-379E-447B-B140-1031F4795120}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AADABEE4-379E-447B-B140-1031F4795120}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AADABEE4-379E-447B-B140-1031F4795120}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35CC0458-CA49-4AD5-A7BD-0B61A1B66FA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35CC0458-CA49-4AD5-A7BD-0B61A1B66FA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35CC0458-CA49-4AD5-A7BD-0B61A1B66FA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35CC0458-CA49-4AD5-A7BD-0B61A1B66FA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27887CBE-97A5-453B-8FE1-41406AA3924A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27887CBE-97A5-453B-8FE1-41406AA3924A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27887CBE-97A5-453B-8FE1-41406AA3924A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27887CBE-97A5-453B-8FE1-41406AA3924A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
