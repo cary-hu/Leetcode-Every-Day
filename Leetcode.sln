@@ -37,7 +37,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RangeModule", "RangeModule\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DefangIPaddr", "DefangIPaddr\DefangIPaddr.csproj", "{35CC0458-CA49-4AD5-A7BD-0B61A1B66FA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindBottomLeftValue", "FindBottomLeftValue\FindBottomLeftValue.csproj", "{27887CBE-97A5-453B-8FE1-41406AA3924A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindBottomLeftValue", "FindBottomLeftValue\FindBottomLeftValue.csproj", "{27887CBE-97A5-453B-8FE1-41406AA3924A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindSubstring", "FindSubstring\FindSubstring.csproj", "{C9DB69E1-16D9-44E0-92D9-0CC8E9AC2DCE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -117,6 +119,10 @@ Global
 		{27887CBE-97A5-453B-8FE1-41406AA3924A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27887CBE-97A5-453B-8FE1-41406AA3924A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27887CBE-97A5-453B-8FE1-41406AA3924A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9DB69E1-16D9-44E0-92D9-0CC8E9AC2DCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9DB69E1-16D9-44E0-92D9-0CC8E9AC2DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9DB69E1-16D9-44E0-92D9-0CC8E9AC2DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9DB69E1-16D9-44E0-92D9-0CC8E9AC2DCE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
