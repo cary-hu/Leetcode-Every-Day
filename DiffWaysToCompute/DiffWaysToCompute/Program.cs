@@ -17,8 +17,8 @@ public class Solution
         {
             if (expression[i] == '+' || expression[i] == '-' || expression[i] == '*')
             {
-                var left = DiffWaysToCompute(expression.Substring(0, i));
-                var right = DiffWaysToCompute(expression.Substring(i + 1));
+                var left = DiffWaysToCompute(expression[..i]);
+                var right = DiffWaysToCompute(expression[(i + 1)..]);
                 foreach (var l in left)
                 {
                     foreach (var r in right)
