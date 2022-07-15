@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicalOrOfTwoBinaryGridsRepresentedAsQuadTrees", "LogicalOrOfTwoBinaryGridsRepresentedAsQuadTrees\LogicalOrOfTwoBinaryGridsRepresentedAsQuadTrees.csproj", "{A6C8AC98-6AA2-44D2-AA62-C312F29941AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A6C8AC98-6AA2-44D2-AA62-C312F29941AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6C8AC98-6AA2-44D2-AA62-C312F29941AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6C8AC98-6AA2-44D2-AA62-C312F29941AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6C8AC98-6AA2-44D2-AA62-C312F29941AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {275A7FE5-CCC9-414D-9483-F2A9F3DA51B1}
+	EndGlobalSection
+EndGlobal
