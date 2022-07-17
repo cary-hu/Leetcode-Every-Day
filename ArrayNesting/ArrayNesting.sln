@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayNesting", "ArrayNesting\ArrayNesting.csproj", "{FB9CFA83-E7B5-4964-973F-F86F9978A0DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB9CFA83-E7B5-4964-973F-F86F9978A0DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB9CFA83-E7B5-4964-973F-F86F9978A0DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB9CFA83-E7B5-4964-973F-F86F9978A0DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB9CFA83-E7B5-4964-973F-F86F9978A0DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EC71E2A5-C960-40F6-BB13-22EE7889B462}
+	EndGlobalSection
+EndGlobal
