@@ -51,13 +51,7 @@ public class Solution
 
     public long GCD(long a, long b)
     {
-        long remainder = a % b;
-        while (remainder != 0)
-        {
-            a = b;
-            b = remainder;
-            remainder = a % b;
-        }
-        return b;
+        if (b == 0) return a;
+        return GCD(b, a % b);
     }
 }
