@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FractionAddition", "FractionAddition\FractionAddition.csproj", "{1D438639-D093-49F3-82BC-487C32B6D2DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D438639-D093-49F3-82BC-487C32B6D2DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D438639-D093-49F3-82BC-487C32B6D2DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D438639-D093-49F3-82BC-487C32B6D2DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D438639-D093-49F3-82BC-487C32B6D2DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8953505E-80C5-488E-80D2-F6217C605DBE}
+	EndGlobalSection
+EndGlobal
