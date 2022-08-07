@@ -7,6 +7,11 @@ echo -e  "
 \033[0m"
 
 echo -e  "
+▶ \033[33;1mgit pull
+\033[0m"
+git pull
+
+echo -e  "
 ▶ \033[33;1mgit add .
 \033[0m"
 git add .
