@@ -1,6 +1,11 @@
 #!/bin/sh
 
 cd "E:\Code\Leetcode-Every-Day"
+
+echo -e  "
+▶ \033[33;1mCurrent folder: $(pwd)
+\033[0m"
+
 echo -e  "
 ▶ \033[33;1mgit add .
 \033[0m"
