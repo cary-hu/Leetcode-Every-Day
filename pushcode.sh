@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd "E:\Code\Leetcode-Every-Day"
+cd $LEETCODE_HOME
 
 echo -e  "
 ▶ \033[33;1mCurrent folder: $(pwd)
