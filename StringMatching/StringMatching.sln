@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringMatching", "StringMatching\StringMatching.csproj", "{EBDAC593-8348-43AC-AC44-1CFAC82C8F2F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBDAC593-8348-43AC-AC44-1CFAC82C8F2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBDAC593-8348-43AC-AC44-1CFAC82C8F2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBDAC593-8348-43AC-AC44-1CFAC82C8F2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBDAC593-8348-43AC-AC44-1CFAC82C8F2F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4DE3B693-E13B-4E2F-AC7B-B92BF33F6897}
+	EndGlobalSection
+EndGlobal
