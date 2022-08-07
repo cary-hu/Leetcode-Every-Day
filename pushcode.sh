@@ -20,11 +20,11 @@ echo -e "
 \033[0m"
 git commit -m "$msg"
 
-# echo -e "
-# ▶ \033[33;1mgit push
-# "
-# echo -e "\033[37;1mstart pushing ...\033[0m
-# "
-# git push
-# echo -e "
-# \033[37;1mAll Done\033[0m"
+echo -e "
+▶ \033[33;1mgit push
+"
+echo -e "\033[37;1mstart pushing ...\033[0m
+"
+git push
+echo -e "
+\033[37;1mAll Done\033[0m"
