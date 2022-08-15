@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.32804.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCircularDeque", "MyCircularDeque\MyCircularDeque.csproj", "{680AD739-F73F-40FC-8FFF-8CF2D78C830C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{680AD739-F73F-40FC-8FFF-8CF2D78C830C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{680AD739-F73F-40FC-8FFF-8CF2D78C830C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{680AD739-F73F-40FC-8FFF-8CF2D78C830C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{680AD739-F73F-40FC-8FFF-8CF2D78C830C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {72887EFD-3E98-4E6E-8F7A-499FDEC9946B}
+	EndGlobalSection
+EndGlobal
