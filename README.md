@@ -4,6 +4,12 @@
 
 TimeLine
 
+2020826
+
+The 100th Day, Keep going.
+
+![](./static/100.png)
+
 20220821
 
 Some thing wrong.... fake aug 6 again again
