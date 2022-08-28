@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32804.467
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PreimageSizeFZF", "PreimageSizeFZF\PreimageSizeFZF.csproj", "{B154324F-A83F-4B41-9F0B-1CAEDCED8099}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B154324F-A83F-4B41-9F0B-1CAEDCED8099}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B154324F-A83F-4B41-9F0B-1CAEDCED8099}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B154324F-A83F-4B41-9F0B-1CAEDCED8099}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B154324F-A83F-4B41-9F0B-1CAEDCED8099}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2F9A00D0-6E1F-49F8-B84F-01643A3C7295}
+	EndGlobalSection
+EndGlobal
