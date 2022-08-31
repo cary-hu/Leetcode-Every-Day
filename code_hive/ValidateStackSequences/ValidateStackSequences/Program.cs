@@ -1,7 +1,4 @@
-﻿var a = new Solution();
-a.ValidateStackSequences(new int[] { 1, 2, 3, 4, 5 }, new int[] { 4, 5, 3, 2, 1 });
-
-/// <summary>
+﻿/// <summary>
 /// 20220831
 /// https://leetcode.cn/problems/validate-stack-sequences/
 /// </summary>
