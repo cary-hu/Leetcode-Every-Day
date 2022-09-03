@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.32804.182
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hammingDistance​​", "hammingDistance​​\hammingDistance​​.csproj", "{A87B14FD-5989-44C8-9848-76A0864FBB53}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HammingDistance​​", "hammingDistance​​\HammingDistance​​.csproj", "{A87B14FD-5989-44C8-9848-76A0864FBB53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
