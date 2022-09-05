@@ -4,6 +4,10 @@
 
 TimeLine
 
+20220905
+
+Today, I will getting start to do Algorithmic Basics learn.
+
 20220902
 
 Participate in the Grape City Algorithm Challenge. Easy and Middle question is fine 👍, but the hard level is not Ok 😒, Just keep it up, the level hard will solved by me 👨‍💻.
