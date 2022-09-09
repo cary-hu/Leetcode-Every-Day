@@ -1,6 +1,4 @@
-﻿var a = new Solution();
-a.FindAnagrams("abab", "ab");
-/// <summary>
+﻿/// <summary>
 /// 20220909
 /// https://leetcode.cn/problems/find-all-anagrams-in-a-string/?plan=algorithms&plan_progress=zd0dlym
 /// </summary>
