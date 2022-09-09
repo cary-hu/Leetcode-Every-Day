@@ -5,16 +5,14 @@
 public class TextEditor
 {
 
-    private List<char> left = new List<char>();
-    private List<char> right = new List<char>();
-    private int cursorIndex = -1;
+    private Stack<char> left = new Stack<char>();
+    private Stack<char> right = new Stack<char>();
 
     public void AddText(string text)
     {
         foreach (var charItem in text)
         {
-            left.Add(charItem);
-            cursorIndex++;
+            left.Push(charItem);
         }
     }
 
@@ -23,10 +21,9 @@ public class TextEditor
         var count = 0;
         for (int i = 0; i < k; i++)
         {
-            if (cursorIndex != -1)
+            if (left.Count > 0)
             {
-                left.RemoveAt(left.Count - 1);
-                cursorIndex--;
+                left.Pop();
                 count++;
             }
         }
@@ -37,22 +34,12 @@ public class TextEditor
     {
         for (int i = 0; i < k; i++)
         {
-            if (cursorIndex != -1)
+            if (left.Count > 0)
             {
-                var leftTrial = left[left.Count - 1];
-                right.Insert(0, leftTrial);
-                left.RemoveAt(left.Count - 1);
-                cursorIndex--;
+                right.Push(left.Pop());
             }
         }
-        var len = Math.Min(10, cursorIndex + 1);
-        var index = cursorIndex;
-        var s = "";
-        for (int i = 0; i < len; i++)
-        {
-            s = left[index--] + s;
-        }
-        return s;
+        return GetLeftString();
     }
 
     public string CursorRight(int k)
@@ -61,18 +48,24 @@ public class TextEditor
         {
             if (right.Count > 0)
             {
-                var rightHead = right[0];
-                left.Add(rightHead);
-                right.RemoveAt(0);
-                cursorIndex++;
+                left.Push(right.Pop());
             }
         }
-        var len = Math.Min(10, cursorIndex + 1);
-        var index = cursorIndex;
-        var s = "";
-        for (int i = 0; i < len; i++)
+        return GetLeftString();
+    }
+    private string GetLeftString()
+    {
+        var chars = new Stack<char>();
+        var count = 10;
+        while (count > 0 && left.Count > 0)
         {
-            s = left[index--] + s;
+            chars.Push(left.Pop());
+            count--;
+        }
+        var s = new string(chars.ToArray());
+        while(chars.Count > 0)
+        {
+            left.Push(chars.Pop());
         }
         return s;
     }
