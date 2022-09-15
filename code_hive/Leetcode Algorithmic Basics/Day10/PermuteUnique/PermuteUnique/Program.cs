@@ -6,6 +6,7 @@ public class Solution
 {
     public IList<IList<int>> PermuteUnique(int[] nums)
     {
+        Array.Sort(nums);
         var res = new List<IList<int>>();
         var st = new bool[nums.Length];
         Array.Fill(st, false);
