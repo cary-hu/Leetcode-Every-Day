@@ -72,4 +72,121 @@ public class Solution
         }
         return (int)(ans % MOD);
     }
+
+    public int RectangleArea2(int[][] rectangles)
+    {
+        Stack<ValueTuple<int, int, int, List<int[]>>> queue = new Stack<(int, int, int, List<int[]>)>();
+        queue.Push(new ValueTuple<int, int, int, List<int[]>>(0, 0, int.MaxValue / 2 + 1, new List<int[]>(rectangles)));
+        long sum = 0;
+        long mod = 1000000007;
+        while (queue.Count > 0)
+        {
+            var current = queue.Pop();
+            var x = current.Item1;
+            var y = current.Item2;
+            var size = current.Item3;
+            var half = size / 2;
+            var topleft = new ValueTuple<int, int, int, List<int[]>>(x, y + half, half, new List<int[]>());
+            var topright = new ValueTuple<int, int, int, List<int[]>>(x + half, y + half, half, new List<int[]>());
+            var bottomleft = new ValueTuple<int, int, int, List<int[]>>(x, y, half, new List<int[]>());
+            var bottomright = new ValueTuple<int, int, int, List<int[]>>(x + half, y, half, new List<int[]>());
+            var topleftFull = false;
+            var toprightFull = false;
+            var bottomleftFull = false;
+            var bottomrightFull = false;
+            if (current.Item4.Count == 1)
+            {
+                long x1 = current.Item4[0][0];
+                long y1 = current.Item4[0][1];
+                long x2 = current.Item4[0][2];
+                long y2 = current.Item4[0][3];
+                sum = (sum + (x2 - x1) * (y2 - y1)) % mod;
+                continue;
+            }
+            foreach (var rect in current.Item4)
+            {
+                var x1 = rect[0];
+                var y1 = rect[1];
+                var x2 = rect[2];
+                var y2 = rect[3];
+                if (!topleftFull && (x1 < x + half && y2 > y + half))
+                {
+                    if (x1 == x && Math.Max(y1, y + half) == y + half && Math.Min(x2, x + half) == x + half && y2 == y + size)
+                    {
+                        topleftFull = true;
+                    }
+                    else
+                    {
+                        topleft.Item4.Add(new int[] { x1, Math.Max(y1, y + half), Math.Min(x2, x + half), y2 });
+                    }
+                }
+                if (!toprightFull && (x2 > x + half && y2 > y + half))
+                {
+                    if (Math.Max(x1, x + half) == x + half && Math.Max(y1, y + half) == y + half && x2 == x + size && y2 == y + size)
+                    {
+                        toprightFull = true;
+                    }
+                    else
+                    {
+                        topright.Item4.Add(new int[] { Math.Max(x1, x + half), Math.Max(y1, y + half), x2, y2 });
+                    }
+                }
+                if (!bottomleftFull && (x1 < x + half && y1 < y + half))
+                {
+                    if (x1 == x && y1 == y && Math.Min(x2, x + half) == x + half && Math.Min(y2, y + half) == y + half)
+                    {
+                        bottomleftFull = true;
+                    }
+                    else
+                    {
+                        bottomleft.Item4.Add(new int[] { x1, y1, Math.Min(x2, x + half), Math.Min(y2, y + half) });
+                    }
+                }
+                if (!bottomrightFull && (x2 > x + half && y1 < y + half))
+                {
+                    if (Math.Max(x1, x + half) == x + half && y1 == y && x2 == x + size && Math.Min(y2, y + half) == y + half)
+                    {
+                        bottomrightFull = true;
+                    }
+                    else
+                    {
+                        bottomright.Item4.Add(new int[] { Math.Max(x1, x + half), y1, x2, Math.Min(y2, y + half) });
+                    }
+                }
+            }
+            if (topleftFull)
+            {
+                sum = (sum + (long)half * (long)half) % mod;
+            }
+            else if (topleft.Item4.Count > 0)
+            {
+                queue.Push(topleft);
+            }
+            if (toprightFull)
+            {
+                sum = (sum + (long)half * (long)half) % mod;
+            }
+            else if (topright.Item4.Count > 0)
+            {
+                queue.Push(topright);
+            }
+            if (bottomleftFull)
+            {
+                sum = (sum + (long)half * (long)half) % mod;
+            }
+            else if (bottomleft.Item4.Count > 0)
+            {
+                queue.Push(bottomleft);
+            }
+            if (bottomrightFull)
+            {
+                sum = (sum + (long)half * (long)half) % mod;
+            }
+            else if (bottomright.Item4.Count > 0)
+            {
+                queue.Push(bottomright);
+            }
+        }
+        return (int)sum;
+    }
 }
