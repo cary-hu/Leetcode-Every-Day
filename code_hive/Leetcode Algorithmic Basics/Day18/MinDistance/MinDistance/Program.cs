@@ -1,5 +1,4 @@
-﻿new Solution().MinDistance("horse", "ros");
-/// <summary>
+﻿/// <summary>
 /// 20220922
 /// https://leetcode.cn/problems/edit-distance/?plan=algorithms&plan_progress=zd0dlym
 /// </summary>
