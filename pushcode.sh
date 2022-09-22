@@ -21,10 +21,13 @@ echo -e "
 ▶ \033[33;1mcommit message:
 \033[37;1m"
 read msg
-if [ ! $msg ]; then
+if [ ! $msg ]
+then
     msg=$(date '+%Y%m%d')
+    echo "Use default commit message: $msg"
+else
+    echo "Commit message: $msg"
 fi
-echo "Use default commit message: $msg"
 echo -e "
 ▶ \033[33;1mgit commit -m '$msg'
 \033[0m"
