@@ -21,7 +21,7 @@ echo -e "
 ▶ \033[33;1mcommit message:
 \033[37;1m"
 read msg
-if [ ! $msg ]
+if [ ! "$msg" ]
 then
     msg=$(date '+%Y%m%d')
     echo "Use default commit message: $msg"
