@@ -4,6 +4,12 @@
 
 TimeLine
 
+20220924
+
+Done the Algorithm Basics learn
+
+![](./static/basic-algorithm.png)
+
 20220905
 
 Today, I will getting start to do Algorithmic Basics learn.
