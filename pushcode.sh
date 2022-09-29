@@ -1,5 +1,21 @@
 #!/bin/sh
 
+while getopts ":d" o; do
+    case "${o}" in
+        d)
+            d=1
+            ;;
+    esac
+done
+shift $((OPTIND-1))
+
+echo "d = ${d}"
+
+if [ ! -z "$d" ]
+then
+    msg=$(date '+%Y%m%d')
+fi
+
 cd "$LEETCODE_HOME"
 
 echo -e  "
@@ -17,10 +33,13 @@ echo -e  "
 git add .
 
 git status
-echo -e "
+if [ ! "$msg" ]
+then
+    echo -e "
 ▶ \033[33;1mcommit message:
 \033[37;1m"
-read msg
+    read msg
+fi
 if [ ! "$msg" ]
 then
     msg=$(date '+%Y%m%d')
