@@ -9,8 +9,6 @@ while getopts ":d" o; do
 done
 shift $((OPTIND-1))
 
-echo "d = ${d}"
-
 if [ ! -z "$d" ]
 then
     msg=$(date '+%Y%m%d')
