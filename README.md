@@ -4,6 +4,10 @@
 
 TimeLine
 
+202209
+
+![](./static/full_202209.png)
+
 20220924
 
 Done the Algorithm Basics learn
