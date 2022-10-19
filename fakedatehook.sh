@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 _() {
-  YEAR="1998"
+  YEAR="2022"
   MONTH="10"
   DAY="19"
   git add .
