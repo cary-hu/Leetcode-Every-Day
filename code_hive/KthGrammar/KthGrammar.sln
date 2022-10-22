@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33006.217
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KthGrammar", "KthGrammar\KthGrammar.csproj", "{E0386235-E8AB-45A1-B166-F335D2AD435F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E0386235-E8AB-45A1-B166-F335D2AD435F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0386235-E8AB-45A1-B166-F335D2AD435F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0386235-E8AB-45A1-B166-F335D2AD435F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0386235-E8AB-45A1-B166-F335D2AD435F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CE37A935-38E6-4C9E-B921-40B9F2CF8708}
+	EndGlobalSection
+EndGlobal
