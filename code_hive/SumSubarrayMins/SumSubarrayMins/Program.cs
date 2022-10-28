@@ -24,4 +24,24 @@ public class Solution
         }
         return (int)res;
     }
+    public int SumSubarrayMins2(int[] arr)
+    {
+        var mod = 1000000007;
+        long res = 0;
+        var n = arr.Length;
+        for (int i = 0; i < n; i++)
+        {
+            var min = arr[i];
+            for (int j = i; j < n; j++)
+            {
+                min = Math.Min(min, arr[j]);
+                res = res + min;
+                if(res >= mod)
+                {
+                    res -= mod;
+                }
+            }
+        }
+        return (int)res;
+    }
 }
