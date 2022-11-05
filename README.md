@@ -4,6 +4,10 @@
 
 TimeLine
 
+202210
+
+![](./static/full_202210.png)
+
 20221024
 
 ![](./static/1024-MarkovChain.png)
