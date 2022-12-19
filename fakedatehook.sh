@@ -2,8 +2,8 @@
 
 _() {
   YEAR="2022"
-  MONTH="11"
-  DAY="21"
+  MONTH="12"
+  DAY="19"
   git add .
   GIT_AUTHOR_DATE="${YEAR}-${MONTH}-${DAY}T12:56:32" \
     GIT_COMMITTER_DATE="${YEAR}-${MONTH}-${DAY}T12:56:32" \
