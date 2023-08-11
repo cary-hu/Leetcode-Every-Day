@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.33927.210
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiagonalSum", "DiagonalSum.csproj", "{E7D495D9-BE2C-44A6-8BEE-5E7AC1FDDE71}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7D495D9-BE2C-44A6-8BEE-5E7AC1FDDE71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7D495D9-BE2C-44A6-8BEE-5E7AC1FDDE71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7D495D9-BE2C-44A6-8BEE-5E7AC1FDDE71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7D495D9-BE2C-44A6-8BEE-5E7AC1FDDE71}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FA5D48D1-FD87-457F-966E-3FE08C861D4D}
+	EndGlobalSection
+EndGlobal
