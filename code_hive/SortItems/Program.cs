@@ -2,8 +2,6 @@
 /// 20230830
 /// https://leetcode.cn/problems/sort-items-by-groups-respecting-dependencies
 /// </summary>
-/// 
-new Solution().SortItems(8, 2, new int[] { -1, -1, 1, 0, 0, 1, 0, -1 }, new int[][] { new int[] { }, new int[] { 6 }, new int[] { 5 }, new int[] { 6 }, new int[] { 3, 6 }, new int[] { }, new int[] { }, new int[] { } });
 public class Solution
 {
     public int[] SortItems(int n, int m, int[] group, IList<IList<int>> beforeItems)
