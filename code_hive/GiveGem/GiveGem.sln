@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34112.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiveGem", "GiveGem.csproj", "{4F1A86CB-EC4D-4CE9-BF8F-F645861E1C7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F1A86CB-EC4D-4CE9-BF8F-F645861E1C7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F1A86CB-EC4D-4CE9-BF8F-F645861E1C7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F1A86CB-EC4D-4CE9-BF8F-F645861E1C7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F1A86CB-EC4D-4CE9-BF8F-F645861E1C7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FD6C8EBC-A6E3-4669-8C24-2609109DD732}
+	EndGlobalSection
+EndGlobal
