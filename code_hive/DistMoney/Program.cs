@@ -10,9 +10,15 @@ public class Solution
         {
             return -1;
         }
-        int tmp = children * 8 - money;
-        if (tmp == 4) return children - 2;
-        if (tmp < 0) return children - 1;
+        int remain = children * 8 - money;
+        if (remain == 4)
+        {
+            return children - 2;
+        }
+        if (remain < 0)
+        {
+            return children - 1;
+        }
         return (money - children) / 7;
     }
 }
