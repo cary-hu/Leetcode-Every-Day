@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34227.203
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilleTheNextRightNode", "FilleTheNextRightNode\FilleTheNextRightNode.csproj", "{3431458D-8DE6-4857-B496-63834D351286}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3431458D-8DE6-4857-B496-63834D351286}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3431458D-8DE6-4857-B496-63834D351286}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3431458D-8DE6-4857-B496-63834D351286}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3431458D-8DE6-4857-B496-63834D351286}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DB4C360F-3C1F-4BC7-9D5B-FE7AB2F4793D}
+	EndGlobalSection
+EndGlobal
