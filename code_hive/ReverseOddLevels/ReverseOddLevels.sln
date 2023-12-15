@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverseOddLevels", "ReverseOddLevels.csproj", "{0CFADB36-E8D1-47F5-851B-9961905AE135}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0CFADB36-E8D1-47F5-851B-9961905AE135}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CFADB36-E8D1-47F5-851B-9961905AE135}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CFADB36-E8D1-47F5-851B-9961905AE135}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CFADB36-E8D1-47F5-851B-9961905AE135}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {78E399CE-6C79-4F1B-B815-F2F87B5D7C7D}
+	EndGlobalSection
+EndGlobal
