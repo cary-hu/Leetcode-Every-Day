@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35219.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindProductsOfElements20240823", "FindProductsOfElements20240823.csproj", "{8995CBFF-FE68-4229-A512-8DD3CE87557D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8995CBFF-FE68-4229-A512-8DD3CE87557D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8995CBFF-FE68-4229-A512-8DD3CE87557D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8995CBFF-FE68-4229-A512-8DD3CE87557D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8995CBFF-FE68-4229-A512-8DD3CE87557D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F8D74D5C-8599-4A49-8199-6399204E65A3}
+	EndGlobalSection
+EndGlobal
