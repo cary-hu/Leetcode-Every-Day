@@ -14,8 +14,8 @@ public class Solution
             cnt[c - 'a']++;
         }
 
-        Stack<char> stack = new Stack<char>();
-        StringBuilder res = new StringBuilder();
+        Stack<char> stack = new();
+        StringBuilder res = new();
         char minCharacter = 'a';
         foreach (char c in s)
         {
