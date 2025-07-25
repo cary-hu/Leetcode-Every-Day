@@ -19,8 +19,7 @@ public class Solution
         for (int i = n; i < n * 2; ++i)
         {
             sumLeft += nums[i];
-            qLeft.Enqueue(nums[i], nums[i]);
-            sumLeft -= qLeft.Dequeue();
+            sumLeft -= qLeft.EnqueueDequeue(nums[i], nums[i]);
             left[i - (n - 1)] = sumLeft;
         }
 
@@ -35,8 +34,7 @@ public class Solution
         for (int i = n * 2 - 1; i >= n; --i)
         {
             sumRight += nums[i];
-            qr.Enqueue(nums[i], nums[i]);
-            sumRight -= qr.Dequeue();
+            sumRight -= qr.EnqueueDequeue(nums[i], nums[i]);
             ans = Math.Min(ans, left[i - n] - sumRight);
         }
         return ans;
