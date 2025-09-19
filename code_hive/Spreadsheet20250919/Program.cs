@@ -4,30 +4,20 @@
 /// </summary>
 public class Spreadsheet
 {
-    private int[] cells;
+    private Dictionary<string, int> cells = new Dictionary<string, int>();
 
     public Spreadsheet(int rows)
     {
-        cells = new int[rows * 26];
-    }
-    private int ParseRow(string cell)
-    {
-        return int.Parse(cell[1..]) - 1;
-    }
-    private int ParseCol(string cell)
-    {
-        return cell[0] - 'A';
+
     }
     public void SetCell(string cell, int value)
     {
-        int row = ParseRow(cell);
-        int col = ParseCol(cell);
-        cells[row * 26 + col] = value;
+        cells[cell] = value;
     }
 
     public void ResetCell(string cell)
     {
-        SetCell(cell, 0);
+        cells.Remove(cell);
     }
     private int GetCell(string cell)
     {
@@ -35,16 +25,17 @@ public class Spreadsheet
         {
             return numberValue;
         }
-        int row = ParseRow(cell);
-        int col = ParseCol(cell);
-        return cells[row * 26 + col];
+        if (cells.TryGetValue(cell, out int value))
+        {
+            return value;
+        }
+        return 0;
     }
 
     public int GetValue(string formula)
     {
-        return formula.Split('=')[1].Split('+')
-            .Select(cell => GetCell(cell))
-            .Sum();
+        var index = formula.IndexOf('+');
+        return GetCell(formula[1..index]) + GetCell(formula[(index + 1)..]);
     }
 }
 
